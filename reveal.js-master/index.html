@@ -85,12 +85,15 @@
 					</aside>
 				</section>	
 				<section>
-					Partials in Sass (import "_nameFile.scss";)
+					Partials in Sass 
 
 					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
 						- start the file name with an underscore _
 						
-						- use the @import directive.	
+						- use the @import directive
+
+						- import "_nameFile.scss";
+
 					</code></pre>
 					<aside class="notes">
 						Shhh, these are your private notes 📝
@@ -120,18 +123,64 @@
 					</aside>
 				</section>		
 				<section>
+					File style.scss
 					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-
+						/*! SASS #style main */
+						@charset "UTF-8";
+						
+						@import "./vendors/_variable.scss";
+						@import "./vendors/_fontawesome.scss";
+						@import "./vendors/_font.scss";
+						
+						@import "./base/_base.scss";
+						@import "./base/_reset.scss";
+						
+						@import "./layout/_header.scss";
+						
+						@import "./components/_buttons.scss";
 					</code></pre>
 					<aside class="notes">
 						Shhh, these are your private notes 📝
 					</aside>
 				</section>
-				<!-- -->
 				<section>
+					Names directories with little explications
 					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
 
+						Vendors — include CSS extern (fonts, Font Awesome icones).
+
+						Base — include CSS global (resets and typography).
+						
+						Layout — contains the layout (header, footers).
+						
+						Components — all components (buttons, form, cards).
+												
 					</code></pre>
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+					</aside>
+				</section>	
+				<!-- -->
+				<section>
+					Use and share code
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						- Click to Watch Sass for compilation 
+						
+						- and create a folder dist/styles/style.css 
+
+					</code></pre>
+					<img src="./images/watch-sass-vsc.png" />
+
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+					</aside>
+				</section>	
+				<section>
+					CSS in 2025 - 2035
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+					</code></pre>
+					<img src="./images/css-2025.jpg" />
+
 					<aside class="notes">
 						Shhh, these are your private notes 📝
 					</aside>
