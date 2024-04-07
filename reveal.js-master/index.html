@@ -16,8 +16,128 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>Create a framework CSS with SASS</section>
+				<section>
+					Install 2 extension in Visual studio code
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						1) Live Server (Ritwick Dey)
+						- Launch a development local Server 
+						with live reload feature for static & dynamic pages
+
+						2) Live Sass Compiler (Glenn Marks) 
+						- Compile Sass or Scss to CSS at realtime.
+					</code></pre>
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+					</aside>
+				</section>	
+				<section>
+					Configurate settings.json in VSC 
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						(File > Preferences > Settings + click top right)
+					</code></pre>
+					<img src="./images/settings-json-vsc.png" />
+
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+					</aside>
+				</section>
+				<section>
+					Add my file config.json (repository) 
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						
+					</code></pre>
+					<img src="./images/configJSON.jpg" />
+
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+					</aside>
+				</section>
+				<section>
+					Understand concepts in Sass
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						- variable with a dollar symbol $ 
+
+						- import with a symbol underscore _
+						
+						- extension .scss 
+						
+					</code></pre>
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+					</aside>
+				</section>	
+				<section>
+					Variables with a dollar symbol $ 
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						$primary-color: #24a0ed;
+
+						.text {
+							color: $primary-color;
+						}
+						button {
+							color: $primary-color;
+							border: 2px solid $primary-color;
+						}
+					</code></pre>
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+					</aside>
+				</section>	
+				<section>
+					Partials in Sass (import "_nameFile.scss";)
+
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						- start the file name with an underscore _
+						
+						- use the @import directive.	
+					</code></pre>
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+						You'll notice that the underscore and the .scss are not added. 
+						That is because Sass automatically assumes that you are referring to the .sass or .scss file.
+					</aside>
+				</section>
+				<section>
+					Structure your Sass Projects (Architecture)
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+					sass/
+					|- base/
+					|    |- _base.scss
+					|    |- _reset.scss
+					|- components/
+					|    |- _buttons.scss
+					|- layout/
+					|    |- _header.scss
+					|- vendors/
+					|    |- _font.scss
+					|    |- _fontawesome.scss
+					|- style.scss
+					|
+					</code></pre>
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+					</aside>
+				</section>		
+				<section>
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+
+					</code></pre>
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+					</aside>
+				</section>
+				<!-- -->
+				<section>
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+
+					</code></pre>
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+					</aside>
+				</section>	
+
+				<!-- <section>Slide 2</section>-->
 			</div>
 		</div>
 
