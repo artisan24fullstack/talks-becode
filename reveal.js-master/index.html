@@ -16,182 +16,251 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Create a framework CSS with SASS</section>
-				<section>
-					Install 2 extension in Visual studio code
+				<section>Setup Tailwind css in react (VITEJS)
 					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-					- a) Live Server 
-					- b) Live Sass Compiler 
+						A Guide to Installing Tailwind CSS with React
+
+					</code></pre>
+				</section>
+				<section>
+					Tailwind CSS is a popular utility-first CSS framework
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						Using utility classes to build custom designs 
+						
+						without writing CSS
 					</code></pre>
 					<aside class="notes">
 
-					1) Live Server (Ritwick Dey)
-					- Launch a development local Server 
-					with live reload feature for static & dynamic pages
-
-					2) Live Sass Compiler (Glenn Marks) 
-					- Compile Sass or Scss to CSS at realtime.
 					</aside>
 				</section>	
 				<section>
-					Configurate settings.json in VSC 
+					Why Choose Tailwind CSS?
 					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-						(File > Preferences > Settings + click top right)
-					</code></pre>
-					<img src="./images/settings-json-vsc.png" />
+						- Speed: Create components quickly
 
+						- Customization: Easy custom
+
+						- Scalability: Ideal for All Project Sizes
+						</code></pre>
 					<aside class="notes">
-						- To make the Live Sass Compiler work
-						- Change the settings
+						- Speed: 
+						Quickly build stylish UI components without the need for extensive CSS files.
+						
+						- Customization: 
+						Tailwind is highly customizable, allowing you to tailor your styles to your project’s needs.
+						
+						- Scalability: 
+						Ideal for projects of all sizes, from small websites to large applications.
+					
 					</aside>
 				</section>
 				<section>
-					Add my file config.json (repository) 
-					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-						
-					</code></pre>
-					<img src="./images/configJSON.png" />
+					Step 1: Create a React Application
 
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+
+						- npx create-vite your-project-name --template react
+
+						(npx) = Node Package eXecute.
+
+						execute Node.js packages without needing to install them globally
+
+						and and the template you want to use here (react)
+					</code></pre>
 					<aside class="notes">
-						- To include a config.json file in Visual Studio Code
+
 					</aside>
 				</section>
 				<section>
-					Understand concepts in Sass
-					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-						- variable with a dollar symbol $ 
+					Step 2: Install Tailwind CSS
 
-						- import with a symbol underscore _
-						
-						- extension .scss 
-						
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+					- npm install -D tailwindcss postcss autoprefixer
+
+					- Install tailwindcss and its peer dependencies,
+
 					</code></pre>
 					<aside class="notes">
-					</aside>
-				</section>	
-				<section>
-					Variables with a dollar symbol $ 
-					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-						$primary-color: #24a0ed;
 
-						.text {
-							color: $primary-color;
+					</aside>
+				</section>
+				<section>
+					Step 3: Configure Tailwind CSS
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+					- npx tailwindcss init -p
+
+					- Then generate your tailwind.config.js files.
+
+					/** @type {import('tailwindcss').Config} */
+					export default {
+						content: [
+						],
+						theme: {
+							extend: {},
+						},
+						plugins: [],
+					}
+					</code></pre>
+					<aside class="notes">
+
+					</aside>
+				</section>
+				<section>
+					Step 4: Configure your template paths
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+					- Add the paths to all of your template files 
+					in your tailwind.config.js file.
+
+					/** @type {import('tailwindcss').Config} */
+					export default {
+						content: [
+						// new 
+							"./index.html",
+							"./src/**/*.{js,ts,jsx,tsx}",
+						],
+						theme: {
+							extend: {},
+						},
+						plugins: [],
+					}
+					</code></pre>
+					<aside class="notes">
+	
+					</aside>
+				</section>
+				<section>
+					Step 5: Including Tailwind in Your CSS
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+					-	Add the @tailwind directives for each of Tailwind’s layers 
+					to your ./src/index.css file.
+
+					/* src/index.css */
+	
+					@tailwind base;
+					@tailwind components;
+					@tailwind utilities;
+
+					</code></pre>
+					<aside class="notes">
+	
+					</aside>
+				</section>
+				<section>
+					Step 6 Start your build process 
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						- using Tailwind in your project 
+						
+						- and change in app
+
+						export default function App() {
+							return (
+								<h1 className="text-3xl font-bold underline">
+									Hello world!
+								</h1>
+							)
 						}
-						button {
-							color: $primary-color;
-							border: 2px solid $primary-color;
+
+						- and npm run dev 
+					</code></pre>
+					<aside class="notes">
+	
+					</aside>
+				</section>
+				<section>
+					Step 7 Tailwind CSS is an ecosystem : 
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						- Install the Official Plugins
+
+						- Plugins can be added to your project via npm, 
+						then adding them to your tailwind.config.js file:
+
+						/** @type {import('tailwindcss').Config} */
+						module.exports = {
+							// ...
+							plugins: [
+								require('@tailwindcss/typography'),
+								require('@tailwindcss/forms'),
+							]
 						}
 					</code></pre>
 					<aside class="notes">
-						Shhh, these are your private notes 📝
-					</aside>
-				</section>	
-				<section>
-					Partials in Sass 
-
-					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-						- start the file name with an underscore _
-						
-						- use the @import directive
-
-						- import "_nameFile.scss";
-
-					</code></pre>
-					<aside class="notes">
-						- For code organization
-
-						You'll notice that the underscore and the .scss are not added. 
-						That is because Sass automatically assumes that you are referring to the .sass or .scss file.
+	
 					</aside>
 				</section>
 				<section>
-					Structure your Sass Projects (Architecture)
+					Step 8 Typography plugin 
 					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-					sass/
-					|- base/
-					|    |- _base.scss
-					|    |- _reset.scss
-					|- components/
-					|    |- _buttons.scss
-					|- layout/
-					|    |- _header.scss
-					|- vendors/
-					|    |- _font.scss
-					|    |- _fontawesome.scss
-					|- style.scss
-					|
+						- npm install -D @tailwindcss/typography
+
+						- https://github.com/tailwindlabs/tailwindcss-typography?tab=readme-ov-file
+
+						- https://tailwindcss-typography.vercel.app/
 					</code></pre>
 					<aside class="notes">
-						- To a structure files in a project.
-					</aside>
-				</section>		
-				<section>
-					File style.scss
-					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-						/*! SASS #style main */
-						@charset "UTF-8";
-						
-						@import "./vendors/_variable.scss";
-						@import "./vendors/_fontawesome.scss";
-						@import "./vendors/_font.scss";
-						
-						@import "./base/_base.scss";
-						@import "./base/_reset.scss";
-						
-						@import "./layout/_header.scss";
-						
-						@import "./components/_buttons.scss";
-					</code></pre>
-					<aside class="notes">
-						-  To show the main file (style.scss)
+						The official Tailwind CSS Typography plugin provides a set of prose classes 
+						you can use to add beautiful typographic defaults to any vanilla HTML you don’t control, 
+						like HTML rendered from Markdown, or pulled from a CMS
 					</aside>
 				</section>
 				<section>
-					Names directories with little explications
+					Step 9 Forms plugins
 					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+					
+					- npm install -D @tailwindcss/forms
 
-						Vendors — include CSS extern (fonts, Font Awesome icones).
+					- https://github.com/tailwindlabs/tailwindcss-forms
 
-						Base — include CSS global (resets, typography, ...).
-						
-						Layout — contains the layout (header, footer).
-						
-						Components — all components (buttons, form, cards).
-												
-					</code></pre>
+					- https://tailwindcss-forms.vercel.app/
+				</code></pre>
 					<aside class="notes">
-						- To explain a different directories
+						A plugin that provides a basic reset for form styles that makes form elements easy to override with utilities.
 					</aside>
-				</section>	
-				<!-- -->
+				</section>
 				<section>
-					Use and share code
+					Step 10 Reusing Styles
+
 					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-						- Click to Watch Sass for compilation 
-						
-						- and create a folder dist/styles/style.css 
-
+						- Managing duplication and creating reusable abstractions.
+						- <!-- 	In HTML Before extracting a custom class -->
+						<button class="py-2 px-5 bg-violet-500 text-white font-semibold rounded-full shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75">Save changes</button>
+						<!-- After extracting a custom class --> 
+						<button class="btn-primary">Save changes</button>
+						<!-- In CSS -->
+						@layer components {
+							.btn-primary {
+								@apply py-2 px-5 bg-violet-500 text-white font-semibold rounded-full shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75;
+							}
+						}
 					</code></pre>
-					<img src="./images/watch-sass-vsc.png" />
-
 					<aside class="notes">
-						- To guide on how to compile SASS into CSS
+	
 					</aside>
-				</section>	
+				</section>
 				<section>
-          NO questions, please ! In french only.
+					Even more possibilities (no time to test)
 					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-						CSS in 2025 - 2035
+						- Dark Mode :  https://tailwindcss.com/docs/dark-mode
+						
+						- Tailwind Generator : https://tailwind-generator.com/generators
+
+						- Building a design system with Figma & Tailwind CSS : 
+						https://uxdesign.cc/building-utility-first-design-systems-part-1-52ce020630b
+
 					</code></pre>
-					<img src="./images/css-2025.jpg" />
-
 					<aside class="notes">
-						Shhh, these are your private notes 📝
+	
 					</aside>
-				</section>	
-
+				</section>
 				<!-- <section>Slide 2</section>-->
 			</div>
+			<section>
+				<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+				</code></pre>
+				<aside class="notes">
+
+				</aside>
+			</section>
+
 		</div>
 
 		<script src="dist/reveal.js"></script>

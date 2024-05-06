@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>Create a framework CSS with SASS</section>
+				<section>
+					Install 2 extension in Visual studio code
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+					- a) Live Server 
+					- b) Live Sass Compiler 
+					</code></pre>
+					<aside class="notes">
+
+					1) Live Server (Ritwick Dey)
+					- Launch a development local Server 
+					with live reload feature for static & dynamic pages
+
+					2) Live Sass Compiler (Glenn Marks) 
+					- Compile Sass or Scss to CSS at realtime.
+					</aside>
+				</section>	
+				<section>
+					Configurate settings.json in VSC 
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						(File > Preferences > Settings + click top right)
+					</code></pre>
+					<img src="./images/settings-json-vsc.png" />
+
+					<aside class="notes">
+						- To make the Live Sass Compiler work
+						- Change the settings
+					</aside>
+				</section>
+				<section>
+					Add my file config.json (repository) 
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						
+					</code></pre>
+					<img src="./images/configJSON.png" />
+
+					<aside class="notes">
+						- To include a config.json file in Visual Studio Code
+					</aside>
+				</section>
+				<section>
+					Understand concepts in Sass
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						- variable with a dollar symbol $ 
+
+						- import with a symbol underscore _
+						
+						- extension .scss 
+						
+					</code></pre>
+					<aside class="notes">
+					</aside>
+				</section>	
+				<section>
+					Variables with a dollar symbol $ 
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						$primary-color: #24a0ed;
+
+						.text {
+							color: $primary-color;
+						}
+						button {
+							color: $primary-color;
+							border: 2px solid $primary-color;
+						}
+					</code></pre>
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+					</aside>
+				</section>	
+				<section>
+					Partials in Sass 
+
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						- start the file name with an underscore _
+						
+						- use the @import directive
+
+						- import "_nameFile.scss";
+
+					</code></pre>
+					<aside class="notes">
+						- For code organization
+
+						You'll notice that the underscore and the .scss are not added. 
+						That is because Sass automatically assumes that you are referring to the .sass or .scss file.
+					</aside>
+				</section>
+				<section>
+					Structure your Sass Projects (Architecture)
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+					sass/
+					|- base/
+					|    |- _base.scss
+					|    |- _reset.scss
+					|- components/
+					|    |- _buttons.scss
+					|- layout/
+					|    |- _header.scss
+					|- vendors/
+					|    |- _font.scss
+					|    |- _fontawesome.scss
+					|- style.scss
+					|
+					</code></pre>
+					<aside class="notes">
+						- To a structure files in a project.
+					</aside>
+				</section>		
+				<section>
+					File style.scss
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						/*! SASS #style main */
+						@charset "UTF-8";
+						
+						@import "./vendors/_variable.scss";
+						@import "./vendors/_fontawesome.scss";
+						@import "./vendors/_font.scss";
+						
+						@import "./base/_base.scss";
+						@import "./base/_reset.scss";
+						
+						@import "./layout/_header.scss";
+						
+						@import "./components/_buttons.scss";
+					</code></pre>
+					<aside class="notes">
+						-  To show the main file (style.scss)
+					</aside>
+				</section>
+				<section>
+					Names directories with little explications
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+
+						Vendors — include CSS extern (fonts, Font Awesome icones).
+
+						Base — include CSS global (resets, typography, ...).
+						
+						Layout — contains the layout (header, footer).
+						
+						Components — all components (buttons, form, cards).
+												
+					</code></pre>
+					<aside class="notes">
+						- To explain a different directories
+					</aside>
+				</section>	
+				<!-- -->
+				<section>
+					Use and share code
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						- Click to Watch Sass for compilation 
+						
+						- and create a folder dist/styles/style.css 
+
+					</code></pre>
+					<img src="./images/watch-sass-vsc.png" />
+
+					<aside class="notes">
+						- To guide on how to compile SASS into CSS
+					</aside>
+				</section>	
+				<section>
+          NO questions, please ! In french only.
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						CSS in 2025 - 2035
+					</code></pre>
+					<img src="./images/css-2025.jpg" />
+
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+					</aside>
+				</section>	
+
+				<!-- <section>Slide 2</section>-->
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
