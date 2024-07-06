@@ -1,6 +1,9 @@
 
-Talk 1 Create a framework CSS with SASS
+> Talk 1 Create a framework CSS with SASS
 
-https://artisan24fullstack.github.io/talks-becode/reveal.js-master/sass.html
+- https://artisan24fullstack.github.io/talks-becode/reveal.js-master/sass.html
 
-https://artisan24fullstack.github.io/talks-becode/reveal.js-master/tailwindReact.html
+> Talk 2 Tailwind.css & React.js
+- https://artisan24fullstack.github.io/talks-becode/reveal.js-master/tailwindReact.html
+
+> Talk  Laravel Ecosystem
