@@ -16,236 +16,309 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Setup Tailwind css in react (VITEJS)
-					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-						A Guide to Installing Tailwind CSS with React
-
-					</code></pre>
-				</section>
 				<section>
-					Tailwind CSS is a popular utility-first CSS framework
+					Tall Stack :
 					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-						Using utility classes to build custom designs 
-						
-						without writing CSS
+						- Tailwind.css (framework css)
+
+						- Alpine.js (librairie JS)
+
+						- Laravel (framework PHP)
+
+						- Livewire (librairie fullstack JS & PHP)
 					</code></pre>
+					<img with="150" src="./images/tallstack.jpg" />
+
 					<aside class="notes">
 
 					</aside>
-				</section>	
+				</section>
 				<section>
-					Why Choose Tailwind CSS?
+					AlpineJS 
 					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-						- Speed: Create components quickly
+						- librairie JavaScript légère
 
-						- Customization: Easy custom
+						- facilite l'ajout d'interactivité côté client
 
-						- Scalability: Ideal for All Project Sizes
-						</code></pre>
+						- propose une syntaxe simple dans le html
+						
+						- Livewire embarque Alpine par défaut
+					</code></pre>
+					<img with="200" height="200" src="./images/Alpine.js.svg" />
 					<aside class="notes">
-						- Speed: 
-						Quickly build stylish UI components without the need for extensive CSS files.
+
+					</aside>
+				</section>
+				<section>
+					Laravel
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						- framework PHP open-source 
+
+						- avec architecture MVC (Modèle-Vue-Contrôleur)
+
+						- ORM (Eloquent) 
+
+						- Moteur de Template (Blade)
 						
-						- Customization: 
-						Tailwind is highly customizable, allowing you to tailor your styles to your project’s needs.
+						- Console Artisan (interface en ligne de commande)
+					</code></pre>
+					<img with="200" height="200" src="./images/laravel.svg" />
+					<aside class="notes">
+
+					</aside>
+				</section>
+				<section>
+					<a href="https://livewire.laravel.com" target="_blank">Laravel Livewire </a> (librairie full stack): 
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						- apporte de l'interactivité aux applications Laravel 
+
+						- crée des composants dynamiques sans écrire du JavaScript
+
+						- logique métier est déplacé dans le composant
+
+						- communication fluide entre le front et le back
+					</code></pre>
+					<img with="200" height="200" src="./images/Livewire.svg" />
+					<aside class="notes">
+						Communication fluide entre le front-end et le back-end
 						
-						- Scalability: 
-						Ideal for projects of all sizes, from small websites to large applications.
+						Gestion des états : 
+						Livewire maintient l'état des composants côté serveur, ce qui simplifie la gestion des données partagées entre le client et le serveur. 
+						Cela permet de créer des applications avec des interactions complexes sans se soucier de la synchronisation des états.
+						
+						Événements en temps réel : 
+						Avec Livewire, vous pouvez écouter et déclencher des événements en temps réel. 
+						Cela facilite la mise à jour automatique de l'interface utilisateur en réponse à des changements d'état ou à des actions de l'utilisateur, 
+						tout cela sans recharger la page.
 					
-					</aside>
-				</section>
-				<section>
-					Step 1: Create a React Application
+						Performance et réactivité
 
-					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-
-						- npx create-vite your-project-name --template react
-
-						(npx) = Node Package eXecute.
-
-						execute Node.js packages without needing to install them globally
-
-						and and the template you want to use here (react)
-					</code></pre>
-					<aside class="notes">
-
-					</aside>
-				</section>
-				<section>
-					Step 2: Install Tailwind CSS
-
-					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-					- npm install -D tailwindcss postcss autoprefixer
-
-					- Install tailwindcss and its peer dependencies,
-
-					</code></pre>
-					<aside class="notes">
-
-					</aside>
-				</section>
-				<section>
-					Step 3: Configure Tailwind CSS
-					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-					- npx tailwindcss init -p
-
-					- Then generate your tailwind.config.js files.
-
-					/** @type {import('tailwindcss').Config} */
-					export default {
-						content: [
-						],
-						theme: {
-							extend: {},
-						},
-						plugins: [],
-					}
-					</code></pre>
-					<aside class="notes">
-
-					</aside>
-				</section>
-				<section>
-					Step 4: Configure your template paths
-					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-					- Add the paths to all of your template files 
-					in your tailwind.config.js file.
-
-					/** @type {import('tailwindcss').Config} */
-					export default {
-						content: [
-						// new 
-							"./index.html",
-							"./src/**/*.{js,ts,jsx,tsx}",
-						],
-						theme: {
-							extend: {},
-						},
-						plugins: [],
-					}
-					</code></pre>
-					<aside class="notes">
-	
-					</aside>
-				</section>
-				<section>
-					Step 5: Including Tailwind in Your CSS
-					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-					-	Add the @tailwind directives for each of Tailwind’s layers 
-					to your ./src/index.css file.
-
-					/* src/index.css */
-	
-					@tailwind base;
-					@tailwind components;
-					@tailwind utilities;
-
-					</code></pre>
-					<aside class="notes">
-	
-					</aside>
-				</section>
-				<section>
-					Step 6 Start your build process 
-					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-						- using Tailwind in your project 
+						Optimisation des requêtes réseau : 
 						
-						- and change in app
+					  les mises à jour de l'interface utilisateur sont effectuées via des requêtes AJAX légères 
+						plutôt que par des rechargements complets de pages. 
 
-						export default function App() {
-							return (
-								<h1 className="text-3xl font-bold underline">
-									Hello world!
-								</h1>
-							)
-						}
+						Cela réduit considérablement la quantité de données transférées entre le client et le serveur, améliorant ainsi les performances.
+						
+						Chargement différé (Lazy Loading) : 
+						Livewire supporte le chargement différé des composants, 
+						ce qui signifie qu'un composant ne sera chargé et rendu que lorsque son contenu est nécessaire. 
 
-						- and npm run dev 
+						Cela peut aider à réduire la charge initiale de la page et à améliorer la vitesse perçue par l'utilisateur.
+
+						Livewire est un framework full-stack pour Laravel qui rend la création d'interfaces dynamiques simples, sans quitter le confort de Laravel. 
+						Il vous permet de créer des composants interactifs entièrement en PHP, sans avoir besoin d'écrire du JavaScript.
+
+						Points clés : 
+						Livewire vous permet de construire des composants réactifs en temps réel qui se mettent automatiquement à jour sans avoir besoin de rafraîchir la page. 
+						Cela peut considérablement accélérer le temps de développement et améliorer l'expérience utilisateur.
+
+						Avantages de Livewire
+
+						Simplicité: 
+						Livewire simplifie la création d'interfaces utilisateur réactives en utilisant principalement PHP et Blade,
+						ce qui réduit la nécessité d'écrire beaucoup de JavaScript.
+				
+
+						Interactivité sans rechargement de page: 
+						Implémenter des fonctionnalités telles que la pagination, la validation de formulaires, les notifications
+
+						Livewire utilise du code PHP côté serveur pour mettre à jour l'interface utilisateur en réponse aux actions de l'utilisateur. 
+
+						Les composants Livewire sont rendus côté serveur, ce qui permet de générer du HTML statique optimisé. 
+						Cette approche réduit la charge sur le navigateur et améliore les performances globales de l'application.
+
+					</aside>
+				</section>
+				<section>
+					Base de données 
+
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						- DB SQLITE
+					</code></pre>
+					<img with="200" height="200" src="./images/SQLite.svg" />
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					Modules - packages utilisés
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						pour automatiser le plus possible
+
+						- Laravel Jestream
+							fournit une base solide pour l'authentification 
+
+						- Laravel Filament
+							facilite la création d'interface admin 
+
+
 					</code></pre>
 					<aside class="notes">
 	
 					</aside>
 				</section>
 				<section>
-					Step 7 Tailwind CSS is an ecosystem : 
+					<a href="https://jetstream.laravel.com/introduction.html" target="_blank">Laravel Jetstream</a> (Authentification)
+
 					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-						- Install the Official Plugins
+						- extension de Laravel Breeze 
 
-						- Plugins can be added to your project via npm, 
-						then adding them to your tailwind.config.js file:
+						- conçu aussi avec Tailwind CSS
 
-						/** @type {import('tailwindcss').Config} */
-						module.exports = {
-							// ...
-							plugins: [
-								require('@tailwindcss/typography'),
-								require('@tailwindcss/forms'),
-							]
-						}
+						- ajoute des fonctionnalités plus compléte
+
+						- Livewire (Blade) ou Inertia (Framewok JS)	
+
+					</code></pre>
+
+					<a href="https://github.com/artisan24fullstack/automatisationLaravel/tree/main/authLaravel" target="_blank">Code Jestream</a> 
+
+					<aside class="notes">
+						Laravel Jetstream est une mise en place d'application élégamment conçue pour Laravel, 
+						offrant un point de départ solide pour la construction d'applications web modernes. 
+
+						Fonctionnalités: 
+						
+						l'authentification à deux facteurs, 
+						la gestion des sessions, 
+						le support API 
+						la gestion d'équipe dès le démarrage. 
+						
+						Jetstream propose 2 implémentations différentes : 
+						
+						Livewire ou Inertia.js .
+
+						Points clés : 
+						
+						Jetstream simplifie la configuration des fonctionnalités communes requises dans la plupart des applications web, 
+						permettant aux développeurs de se concentrer sur la construction de fonctionnalités uniques.
+
+					</aside>
+				</section>
+				<section>
+					<a href="https://filamentphp.com" target="_blank">Laravel Filament</a> (Admin) : 
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						- module GRATUIT puissant et flexible 
+
+						- interface intuitive pour gérer les ressources backend
+
+						- facile à installer et de configurer
+
+						- idéal pour créer rapidement des back-offices
+					</code></pre>
+					<a href="https://github.com/artisan24fullstack/automatisationLaravel/tree/main/filamentLaravel" target="_blank">Code Filament</a> 
+					<aside class="notes">
+						Filament :
+						panneau d'administration construit sur Laravel, 
+						conçu pour être rapide, flexible et facile à étendre. 
+
+						Il offre une interface propre et intuitive pour gérer les ressources backend de votre application.
+
+						Points clés : 
+
+						Filament est parfait pour créer des panneaux d'administration personnalisés avec peu d'effort. 
+						Il prend en charge la gestion des ressources, les opérations CRUD et la personnalisation via des plugins.
+
+						Meilleures pratiques : 
+
+						Exploitez le système de plugins de Filament pour étendre sa fonctionnalité selon vos besoins. 
+					</aside>
+				</section>
+				
+				<section>
+					Mes défis
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						- explorer l'écosyteme laravel
+
+						- améliorer mon code						
+					</code></pre>
+					<aside class="notes">
+
+					</aside>
+				</section>
+				<section>
+					Eager Loading
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+
 					</code></pre>
 					<aside class="notes">
 	
 					</aside>
 				</section>
+
 				<section>
-					Step 8 Typography plugin 
+					Cache dans laravel
 					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-						- npm install -D @tailwindcss/typography
+						use Illuminate\Support\Facades\Cache;
 
-						- https://github.com/tailwindlabs/tailwindcss-typography?tab=readme-ov-file
+						$latestPosts = 
+						
+						Cache::remember('latestPosts', now()->addDay(), 
+						
+						function () {
+							return Post::published()
+							->with('categories')
+							->latest('published_at')->take(6)->get();
+						});
 
-						- https://tailwindcss-typography.vercel.app/
+						return view('home', [ 'latestPosts' => $latestPosts ]);
+						
 					</code></pre>
-					<aside class="notes">
-						The official Tailwind CSS Typography plugin provides a set of prose classes 
-						you can use to add beautiful typographic defaults to any vanilla HTML you don’t control, 
-						like HTML rendered from Markdown, or pulled from a CMS
-					</aside>
-				</section>
-				<section>
-					Step 9 Forms plugins
-					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+
+					<a href="https://laravel.com/docs/10.x/cache" target="_blank">Documentation cache laravel</a> 
 					
-					- npm install -D @tailwindcss/forms
-
-					- https://github.com/tailwindlabs/tailwindcss-forms
-
-					- https://tailwindcss-forms.vercel.app/
-				</code></pre>
 					<aside class="notes">
-						A plugin that provides a basic reset for form styles that makes form elements easy to override with utilities.
-					</aside>
-				</section>
-				<section>
-					Step 10 Reusing Styles
+						Utilisation de Cache::remember
 
-					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-						- Managing duplication and creating reusable abstractions.
-						- <!-- 	In HTML Before extracting a custom class -->
-						<button class="py-2 px-5 bg-violet-500 text-white font-semibold rounded-full shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75">Save changes</button>
-						<!-- After extracting a custom class --> 
-						<button class="btn-primary">Save changes</button>
-						<!-- In CSS -->
-						@layer components {
-							.btn-primary {
-								@apply py-2 px-5 bg-violet-500 text-white font-semibold rounded-full shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75;
-							}
-						}
-					</code></pre>
-					<aside class="notes">
-	
-					</aside>
-				</section>
-				<section>
-					Even more possibilities (no time to test)
-					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-						- Dark Mode :  https://tailwindcss.com/docs/dark-mode
+						Cache::remember : 
+						Cette méthode fait partie de la facade Cache de Laravel. 
+						Elle est utilisée pour récupérer une valeur du cache s'il existe, 
+						sinon elle exécute la fonction donnée pour générer cette valeur, 
+						puis la stocke dans le cache pour une durée spécifiée. 
 						
-						- Tailwind Generator : https://tailwind-generator.com/generators
+						C'est une façon efficace de réduire le nombre de requêtes à la base de données en stockant les résultats des requêtes coûteuses.
 
-						- Building a design system with Figma & Tailwind CSS : 
-						https://uxdesign.cc/building-utility-first-design-systems-part-1-52ce020630b
+						Paramètres de Cache::remember
+						Premier argument : 'latestPosts' : 
+						
+						Ce premier argument est la clé sous laquelle la valeur sera stockée dans le cache. 
+						Ici, la clé est 'latestPostss', ce qui signifie que les données correspondantes seront associées à cette clé dans le cache.
 
+						Deuxième argument : now()->addDay() : 
+						
+						Ce second argument définit la durée pendant laquelle les données resteront valides dans le cache. 
+						Ici, now()->addDay() signifie que les données seront conservées dans le cache jusqu'à la fin de la journée actuelle. 
+						Après cette période, Laravel tentera de récupérer les données à partir de la base de données et de mettre à jour le cache.
+
+						Troisième argument : 
+						Fonction anonyme : Si les données ne sont pas trouvées dans le cache ou si leur durée de validité a expiré, 
+						Laravel exécutera cette fonction pour générer les données. 
+
+						Cette fonction est une closure qui n'a pas besoin de référence explicite à this ou $this, 
+						car elle est appelée dans un contexte où this est disponible.
+					</aside>
+				</section>
+				<section>
+					Larastan
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						- Tester pour améliorer la qualité du code
+
+						* Typisation Statique
+						spécifier explicitement les types de données attendus 
+
+						* Analyse de Code
+						de découvrir des erreurs potentielles dans le code 
+					</code></pre>
+
+					<a href="https://github.com/artisan24fullstack/phpstan" target="_blank">Test Larastan</a> 
+
+					<aside class="notes">
+					</aside>
+				</section>
+				
+
+				<section>
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
 					</code></pre>
 					<aside class="notes">
 	
@@ -253,13 +326,6 @@
 				</section>
 				<!-- <section>Slide 2</section>-->
 			</div>
-			<section>
-				<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-				</code></pre>
-				<aside class="notes">
-
-				</aside>
-			</section>
 
 		</div>
 
