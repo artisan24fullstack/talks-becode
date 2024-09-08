@@ -7,3 +7,4 @@
 - https://artisan24fullstack.github.io/talks-becode/reveal.js-master/tailwindReact.html
 
 > Talk  Laravel Ecosystem
+- https://artisan24fullstack.github.io/talks-becode/reveal.js-master/index.html
